@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <a href="#" @click.prevent="signout">登出</a>
+    <!-- <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -79,7 +80,7 @@
           awesome-vue
         </a>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -89,6 +90,18 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+    methods: {
+    signout(){
+      const api = `${process.env.APIPATH}/logout`;
+      const vm = this;
+      // console.log(api)
+      this.$http.post(api).then((res) => {
+        if(res.data.success === true){
+            this.$router.push('/login');
+        }
+      });
     }
   }
 }

@@ -7,6 +7,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.config.productionTip = false
 Vue.use(VueAxios,axios);
+axios.defaults.withCredentials = true; //跨域
 
 /* eslint-disable no-new */
 new Vue({
