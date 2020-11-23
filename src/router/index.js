@@ -7,14 +7,19 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '*', //避免不存在頁面的空白
+      redirect: '/login',
+    },
+    {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
+      meta: {requiresAuth: true}
     },
     {
       path: '/login',
       name: 'Login',
-      component: ()=>import('@/components/pages/Login')
+      component: ()=>import('@/components/pages/Login'),
     }
   ]
 })

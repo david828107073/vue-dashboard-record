@@ -50,10 +50,14 @@ export default {
       const vm = this;
       // console.log(api)
       this.$http.post(api, vm.user).then((res) => {
-        if(res.data.success === true){
-            this.$router.push('/');
-        }else{
-            alert('帳密錯誤!');
+        if (res.data.success === true) {
+          const token = res.data.token;
+          const expired = res.data.expired;
+          console.log(token, expired);
+          document.cookie = `hexToken=${token},expires=${new Date(expired)}`;
+          this.$router.push('/');
+        } else {
+          alert("帳密錯誤!");
         }
       });
     },
