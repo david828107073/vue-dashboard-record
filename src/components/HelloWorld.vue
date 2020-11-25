@@ -94,15 +94,20 @@ export default {
   },
     methods: {
     signout(){
+      
       const api = `${process.env.APIPATH}/logout`;
+      console.log(api)
       const vm = this;
-      // console.log(api)
       this.$http.post(api).then((res) => {
         if(res.data.success === true){
             this.$router.push('/login');
         }
       });
     }
+  },created(){ //取cookie
+    const myCookie = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, "$1")
+    console.log(`myCooike=${myCookie}`)
+    this.$http.defaults.headers.common.Authorization = myCookie;
   }
 }
 </script>

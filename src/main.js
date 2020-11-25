@@ -21,17 +21,20 @@ new Vue({
 
 router.beforeEach((to, from, next) => {
   // console.log(`to: ${to},from: ${from}, next: ${next}`)
-  if (to.meta.requiresAuth) {
+  if(to.meta.requiresAuth){
     const api = `${process.env.APIPATH}/api/user/check`;
-    axios.post(api).then((res) => {
+    const vm = this;
+    axios.post(api).then((res)=>{
       console.log(res.data);
       if(res.data.success){
         next();
-      } else{
+      }else{
         next({
           path: '/login'
         })
       }
     })
+  } else {
+    next();
   }
 })
