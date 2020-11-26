@@ -55,7 +55,7 @@ export default {
           const expired = res.data.expired;
           console.log(token, expired);
           document.cookie = `hexToken=${token},expires=${new Date(expired)}`;
-          this.$router.push('/');
+          this.$router.push('/index');
         } else {
           alert("帳密錯誤!");
         }

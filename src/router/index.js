@@ -11,7 +11,7 @@ export default new Router({
       redirect: '/login',
     },
     {
-      path: '/',
+      path: '/index',
       name: 'HelloWorld',
       component: HelloWorld,
       meta: {requiresAuth: true}
