@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import Dashboard from '@/components/Dashboard'
+import Test from '@/components/pages/test'
+import Products from '@/components/Products'
 // import Login from '@/components/pages/Login'
 Vue.use(Router)
 
@@ -9,6 +12,24 @@ export default new Router({
     {
       path: '*', //避免不存在頁面的空白
       redirect: '/login',
+    },
+    {
+      path: '/',
+      name: 'test',
+      component: Test
+    },
+    {
+      path: '/admin',
+      name: 'HelloWorld',
+      component: Dashboard,
+      children: [
+        {
+          path: '/products',
+          name: 'Products',
+          component: Products,
+          meta: {requiresAuth: true},
+        }
+      ]
     },
     {
       path: '/index',

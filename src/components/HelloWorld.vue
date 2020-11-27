@@ -105,9 +105,7 @@ export default {
       });
     }
   },created(){ //取cookie
-    const myCookie = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, "$1")
-    console.log(`myCooike=${myCookie}`)
-    this.$http.defaults.headers.common.Authorization = myCookie;
+  
   }
 }
 </script>
