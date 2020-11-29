@@ -10,7 +10,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '*', //避免不存在頁面的空白
+      path: '*', 
       redirect: '/login',
     },
     {
