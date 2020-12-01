@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+// import HelloWorld from '@/components/HelloWorld'
 import Dashboard from '@/components/Dashboard'
 import Test from '@/components/pages/test'
 import Products from '@/components/Products'
@@ -20,7 +20,7 @@ export default new Router({
     },
     {
       path: '/admin',
-      name: 'HelloWorld',
+      name: 'Dashboard',
       component: Dashboard,
       children: [
         {
@@ -31,12 +31,12 @@ export default new Router({
         }
       ]
     },
-    {
-      path: '/index',
-      name: 'HelloWorld',
-      component: HelloWorld,
-      meta: {requiresAuth: true}
-    },
+    // {
+    //   path: '/index',
+    //   name: 'HelloWorld',
+    //   component: HelloWorld,
+    //   meta: {requiresAuth: true}
+    // },
     {
       path: '/login',
       name: 'Login',
