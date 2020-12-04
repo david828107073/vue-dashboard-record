@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import 'bootstrap';
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios);
 // axios.defaults.withCredentials = true; //跨域

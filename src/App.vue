@@ -14,16 +14,16 @@ export default {
     );
     console.log(`myCooike=${myCookie}`);
     this.$http.defaults.headers.common.Authorization = myCookie;
-    const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products`;
+    // const api = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products`;
     //API 伺服器路徑
     // 所申請的 API Path
-    console.log(api);
-    this.$http
-      .get(api)
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
+    // console.log(api);
+    // this.$http
+    //   .get(api)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //   })
+    //   .catch((err) => console.log(err));
   },
 };
 </script>

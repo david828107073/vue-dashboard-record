@@ -24,7 +24,7 @@ export default new Router({
       component: Dashboard,
       children: [
         {
-          path: '/products',
+          path: 'products',
           name: 'Products',
           component: Products,
           meta: {requiresAuth: true},
