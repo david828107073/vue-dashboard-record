@@ -26,7 +26,7 @@ router.beforeEach((to, from, next) => {
     const api = `${process.env.APIPATH}/api/user/check`;
     const vm = this;
     axios.post(api).then((res)=>{
-      console.log(res.data);
+      // console.log(res.data);
       if(res.data.success){
         next();
       }else{

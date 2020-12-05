@@ -50,8 +50,12 @@ export default {
       const vm = this;
       // console.log(api)
       this.$http.post(api, vm.user).then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if(res.data.success) {
+          const token = res.data.token;
+          const expired = res.data.expired;
+          // console.log(token,expired);
+          document.cookie = `hexToken=${token}; expires=${new Date(expired)};`;
           vm.$router.push('/admin/products')
         }
       });

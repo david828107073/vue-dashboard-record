@@ -14,11 +14,22 @@ import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import Products from "./Products";
 export default {
+  data(){
+    return {}
+  },
   components: {
     Sidebar,
     Navbar,
     Products,
   },
+  created() {
+    const myCookie = document.cookie.replace(
+      /(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/,
+      "$1"
+    );
+   this.$http.defaults.headers.common.Authorization = myCookie; //cookie帶到後端
+   
+  }
 };
 </script>
 
